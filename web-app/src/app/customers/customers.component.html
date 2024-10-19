@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Liste des Clients</h2>
+
+  <div *ngIf="customers">  <!-- Vérifie si customers a des éléments -->
+    <!-- Table des clients -->
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Actions</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers._embedded.customers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>
+          <a  class="btn btn-info btn-sm">View Details</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
